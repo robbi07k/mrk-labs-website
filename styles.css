@@ -1062,12 +1062,16 @@ html[data-theme="light"] .principle-card :focus-visible {
   .header-inner { min-height: 64px; grid-template-columns: minmax(0, 1fr) auto; gap: 8px; }
   .brand-lockup { min-width: 116px; }
   .brand-wordmark { width: min(30vw, 260px); }
+  .header-menu { position: absolute; top: 72px; right: 0; z-index: 2; }
+  .menu-toggle { width: 32px; height: 32px; border-radius: 8px; }
+  .menu-icon { width: 18px; height: 18px; }
   .main-nav {
     position: absolute;
     top: 64px;
     left: calc(-1 * var(--gutter));
     width: calc(100% + var(--gutter) * 2);
     min-height: 48px;
+    padding-right: 52px;
     justify-content: stretch;
     gap: 0;
     border-bottom: 1px solid var(--header-line);
@@ -1086,11 +1090,17 @@ html[data-theme="light"] .principle-card :focus-visible {
     text-align: center;
   }
   .main-nav a:last-child { border-right: 0; }
-  .header-menu-panel { top: calc(100% + 48px); }
+  .header-menu-panel {
+    top: calc(100% + 8px);
+    width: min(126px, calc(100vw - var(--gutter) * 2));
+  }
 }
 
 @media (max-width: 620px) {
   :root { --gutter: 20px; --radius: 14px; }
+  .header-inner { min-height: 44px; }
+  .header-menu { top: 52px; }
+  .main-nav { top: 44px; }
   .hero { grid-template-columns: minmax(0, 1fr); gap: 44px; padding-block: 112px 72px; }
   .hero::before {
     background: linear-gradient(180deg, rgba(6, 18, 37, 0.42), rgba(6, 18, 37, 0.2) 38%, transparent 70%, rgba(6, 18, 37, 0.12));

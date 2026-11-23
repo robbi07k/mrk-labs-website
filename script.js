@@ -8,7 +8,7 @@
       navLabel: "Navigasi utama",
       menuToggleLabel: "Buka atau tutup menu navigasi",
       navServices: "Solusi",
-      navProcess: "Proses",
+      navProcess: "Workflow",
       navUseCases: "Contoh kasus",
       navAbout: "Tentang",
       navContact: "Kontak",
