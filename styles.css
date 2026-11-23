@@ -1108,7 +1108,8 @@ html[data-theme="light"] .principle-card :focus-visible {
   .hero h1 { font-size: clamp(42px, 12.5vw, 58px); }
   .hero-tagline { font-size: 19px; }
   .hero-description { font-size: 16px; }
-  .hero-actions .button { flex: 1 1 170px; }
+  .hero-actions { margin-top: 28px; }
+  .hero-actions .button { flex: 1 1 170px; margin-top: 0; }
   .showcase { width: 100%; max-width: 500px; padding: 14px; }
   .showcase-stage { height: 346px; margin-block: 10px 7px; }
   .scene-art { max-height: 225px; }
