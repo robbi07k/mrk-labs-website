@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 80 80">
+  <title>MRK Labs icon</title>
+  <g transform="translate(6 18) scale(.8)">
+    <path fill="#F4F7FC" d="M0 56V0H12L42 27Q44 29 46 27L63 8L71 16L51 36Q44 43 37 36L12 14V56Z"/>
+    <path fill="#08B9F2" d="M63 8L71 0H85V12H75L71 16Z"/>
+    <path fill="#F4F7FC" d="M73 26H85V56H73Z"/>
+  </g>
+</svg>
