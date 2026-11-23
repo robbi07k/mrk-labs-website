@@ -1106,6 +1106,7 @@ html[data-theme="light"] .principle-card :focus-visible {
     background: linear-gradient(180deg, rgba(6, 18, 37, 0.42), rgba(6, 18, 37, 0.2) 38%, transparent 70%, rgba(6, 18, 37, 0.12));
   }
   .hero h1 { font-size: clamp(42px, 12.5vw, 58px); }
+  .hero h1 .accent-text { line-height: 1.2; padding-bottom: 0.14em; }
   .hero-tagline { font-size: 19px; }
   .hero-description { font-size: 16px; }
   .hero-actions { margin-top: 28px; }

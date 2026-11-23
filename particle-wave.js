@@ -49,7 +49,7 @@
     var baseRows = isMobile
       ? Math.max(24, Math.min(36, Math.round(heroHeight / 30)))
       : (width <= 900 ? 32 : 36);
-    var horizonRatio = isMobile ? 0.1 : 0.12;
+    var horizonRatio = isMobile ? 0.04 : 0.12;
     var maxDepth = Math.pow(
       (height / heroHeight - horizonRatio) / 1.03,
       1 / 1.65
@@ -89,7 +89,7 @@
 
     var isMobile = mobileQuery.matches;
     var centerX = width * 0.5;
-    var horizon = heroHeight * (isMobile ? 0.1 : 0.12);
+    var horizon = heroHeight * (isMobile ? 0.04 : 0.12);
 
     for (var index = 0; index < count; index += 1) {
       var u = pointU[index];
@@ -134,7 +134,7 @@
         + Math.pow((normalizedY - focusY) / radiusY, 2);
       var contrastMask = 1 - 0.44 * Math.exp(-focusDistance * 1.15);
       var activity = isMobile
-        ? 0.28 + 0.72 * smoothStep(0.34, 0.92, normalizedY)
+        ? 0.5 + 0.5 * smoothStep(0.1, 0.5, normalizedY)
         : 0.78 + 0.22 * smoothStep(0.08, 0.94, normalizedY);
       var crest = Math.max(0, Math.min(1, 0.5 + wave * 0.5));
       var twinkle = 0.88 + 0.12 * Math.sin(time * (1.1 + seed) + seed * 18);
