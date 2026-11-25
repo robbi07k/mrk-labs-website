@@ -10,6 +10,9 @@
       navServices: "Solusi",
       navProcess: "Workflow",
       navUseCases: "Contoh penerapan",
+      navUseCasesMenuLabel: "Daftar use cases",
+      navUseCasesAll: "Semua use cases",
+      navUseCaseWorkOrder: "Data Work Order",
       navAbout: "Tentang",
       navContact: "Kontak",
       heroEyebrow: "STUDIO AI & OTOMASI UNTUK BISNIS",
@@ -299,23 +302,49 @@
   var menuToggle = document.getElementById("menu-toggle");
   var menuPanel = document.getElementById("header-menu-panel");
   var headerMenu = document.querySelector(".header-menu");
+  var useCasesDropdown = document.querySelector(".nav-dropdown");
+  var useCasesToggle = document.getElementById("use-cases-toggle");
+  var useCasesMenu = document.getElementById("use-cases-menu");
   menuPanel.hidden = true;
+  useCasesMenu.hidden = true;
 
   function setMenuOpen(isOpen) {
     menuToggle.setAttribute("aria-expanded", String(isOpen));
     menuPanel.hidden = !isOpen;
   }
 
+  function setUseCasesOpen(isOpen) {
+    useCasesToggle.setAttribute("aria-expanded", String(isOpen));
+    useCasesMenu.hidden = !isOpen;
+  }
+
   menuToggle.addEventListener("click", function () {
     setMenuOpen(menuPanel.hidden);
+  });
+  useCasesToggle.addEventListener("click", function () {
+    setUseCasesOpen(useCasesMenu.hidden);
+  });
+  useCasesMenu.querySelectorAll("a").forEach(function (link) {
+    link.addEventListener("click", function () {
+      setUseCasesOpen(false);
+    });
   });
   document.addEventListener("click", function (event) {
     if (!headerMenu.contains(event.target)) {
       setMenuOpen(false);
     }
+    if (!useCasesDropdown.contains(event.target)) {
+      setUseCasesOpen(false);
+    }
   });
   document.addEventListener("keydown", function (event) {
-    if (event.key === "Escape" && menuToggle.getAttribute("aria-expanded") === "true") {
+    if (event.key !== "Escape") {
+      return;
+    }
+    if (useCasesToggle.getAttribute("aria-expanded") === "true") {
+      setUseCasesOpen(false);
+      useCasesToggle.focus();
+    } else if (menuToggle.getAttribute("aria-expanded") === "true") {
       setMenuOpen(false);
       menuToggle.focus();
     }

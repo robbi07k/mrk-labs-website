@@ -11,7 +11,7 @@
     <meta name="theme-color" content="#F5F8FC">
     <title>MRK Labs — AI &amp; Business Automation Studio</title>
     <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
-    <link rel="stylesheet" href="styles.css?v=9">
+    <link rel="stylesheet" href="styles.css?v=10">
   </head>
   <body>
     <a class="skip-link" href="#main-content" data-i18n="skip">Skip to content</a>
@@ -24,7 +24,21 @@
         <nav class="main-nav" aria-label="Main navigation" data-i18n-aria-label="navLabel">
           <a href="#services" data-i18n="navServices">Services</a>
           <a href="#process" data-i18n="navProcess">Workflow</a>
-          <a href="#use-cases" data-i18n="navUseCases">Use cases</a>
+          <div class="nav-dropdown">
+            <button
+              class="nav-dropdown-toggle"
+              id="use-cases-toggle"
+              type="button"
+              aria-expanded="false"
+              aria-haspopup="true"
+              aria-controls="use-cases-menu"
+              data-i18n="navUseCases"
+            >Use cases</button>
+            <div class="nav-dropdown-menu" id="use-cases-menu" role="group" aria-label="Use cases menu" data-i18n-aria-label="navUseCasesMenuLabel">
+              <a href="#use-cases" data-i18n="navUseCasesAll">All use cases</a>
+              <a href="maintenance-reliability/" data-i18n="navUseCaseWorkOrder">Work Order data</a>
+            </div>
+          </div>
           <a href="#about" data-i18n="navAbout">About</a>
           <a href="#contact" data-i18n="navContact">Contact</a>
         </nav>
@@ -390,7 +404,7 @@
       </div>
     </footer>
 
-    <script src="script.js?v=13"></script>
+    <script src="script.js?v=14"></script>
     <script src="particle-wave.js?v=3"></script>
     <script src="showcase.js"></script>
   </body>
