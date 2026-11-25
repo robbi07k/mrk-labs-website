@@ -1,0 +1,159 @@
+<!doctype html>
+<html lang="en" data-theme="dark" data-asset-prefix="../">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="color-scheme" content="dark light">
+    <meta
+      name="description"
+      content="A practical workflow for more consistent Work Order data and reliability reporting."
+      data-description-en="A practical workflow for more consistent Work Order data and reliability reporting."
+      data-description-id="Contoh workflow untuk merapikan data Work Order dan mendukung reliability reporting."
+    >
+    <meta name="theme-color" content="#F5F8FC">
+    <title
+      data-title-en="Maintenance &amp; Reliability | MRK Labs"
+      data-title-id="Maintenance &amp; Reliability | MRK Labs"
+    >Maintenance &amp; Reliability | MRK Labs</title>
+    <link rel="icon" type="image/svg+xml" href="../assets/favicon.svg">
+    <link rel="stylesheet" href="../styles.css?v=9">
+  </head>
+  <body>
+    <a class="skip-link" href="#main-content" data-i18n="skip">Skip to content</a>
+
+    <header class="site-header">
+      <div class="container header-inner">
+        <a class="brand-lockup" href="../#top" aria-label="MRK Labs">
+          <img class="brand-wordmark" src="../assets/logo-primary.svg?v=15" alt="" aria-hidden="true">
+        </a>
+        <nav class="main-nav" aria-label="Main navigation" data-i18n-aria-label="navLabel">
+          <a href="../#services" data-i18n="navServices">Services</a>
+          <a href="../#process" data-i18n="navProcess">Workflow</a>
+          <a href="../#use-cases" data-i18n="navUseCases">Use cases</a>
+          <a href="../#about" data-i18n="navAbout">About</a>
+          <a href="../#contact" data-i18n="navContact">Contact</a>
+        </nav>
+        <div class="header-menu">
+          <button
+            class="menu-toggle"
+            id="menu-toggle"
+            type="button"
+            aria-expanded="false"
+            aria-controls="header-menu-panel"
+            aria-label="Toggle navigation menu"
+            data-i18n-aria-label="menuToggleLabel"
+          >
+            <svg class="menu-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+              <path d="M4 7h16M4 12h16M4 17h16"></path>
+            </svg>
+          </button>
+          <div class="header-menu-panel" id="header-menu-panel">
+            <div class="header-controls">
+              <button class="language-toggle" id="language-toggle" type="button" role="switch" aria-checked="false" aria-label="Switch language to Indonesian">
+                <span class="language-option language-en" aria-hidden="true">EN</span>
+                <span class="language-option language-id" aria-hidden="true">ID</span>
+                <span class="language-thumb" aria-hidden="true"></span>
+              </button>
+              <div class="theme-picker" role="group" aria-label="Choose background theme" data-i18n-aria-label="themePickerLabel">
+                <button class="theme-option" type="button" data-theme-value="dark" aria-pressed="true" data-i18n="themeNavy">Navy</button>
+                <button class="theme-option" type="button" data-theme-value="light" aria-pressed="false" data-i18n="themeWhite">White</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <main id="main-content">
+      <section class="section container reliability-hero" id="top" aria-labelledby="maintenance-title">
+        <div class="section-heading reveal">
+          <p class="eyebrow" data-i18n="maintenanceEyebrow">MAINTENANCE &amp; RELIABILITY</p>
+          <h1 id="maintenance-title" data-i18n="maintenanceTitle">Turn Work Order data into more reliable decisions.</h1>
+          <p class="section-intro" data-i18n="maintenanceIntro">For planners, reliability engineers, and operations leaders who need more consistent Work Order data and dependable reporting.</p>
+        </div>
+        <div class="hero-actions reveal">
+          <a class="button button-primary" href="../#contact" data-i18n="maintenancePrimaryCta">Discuss a reliability workflow</a>
+          <a class="button button-secondary" href="#maintenance-workflow" data-i18n="maintenanceSecondaryCta">View the workflow</a>
+        </div>
+      </section>
+
+      <section class="section container" id="maintenance-case" aria-labelledby="maintenance-case-title">
+        <div class="section-heading reveal">
+          <p class="eyebrow" data-i18n="maintenanceCaseEyebrow">A PRACTICAL USE CASE</p>
+          <h2 id="maintenance-case-title" data-i18n="maintenanceCaseTitle">When Work Order data does not line up</h2>
+        </div>
+        <div class="use-case-grid">
+          <article class="use-case-card reveal">
+            <p class="item-number" data-i18n="maintenanceChallengeTitle">The challenge</p>
+            <p data-i18n="maintenanceChallengeText">Asset IDs, failure codes, and close-out notes vary across Work Orders, making history harder to compare and reliability analysis less dependable.</p>
+          </article>
+          <article class="use-case-card reveal">
+            <p class="item-number" data-i18n="maintenanceApproachTitle">A possible approach</p>
+            <p data-i18n="maintenanceApproachText">Normalize key fields against an agreed taxonomy, validate required data, and flag ambiguous records for engineer review while preserving the original values.</p>
+          </article>
+          <article class="use-case-card reveal">
+            <p class="item-number" data-i18n="maintenanceOutcomeTitle">A better outcome</p>
+            <p data-i18n="maintenanceOutcomeText">A more consistent data foundation for MTBF, MTTR, backlog, and Pareto reporting.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="section container" id="maintenance-workflow" aria-labelledby="maintenance-workflow-title">
+        <div class="section-heading reveal">
+          <p class="eyebrow" data-i18n="maintenanceWorkflowEyebrow">WORKFLOW SNAPSHOT</p>
+          <h2 id="maintenance-workflow-title" data-i18n="maintenanceWorkflowTitle">From source records to reliability reporting</h2>
+          <p class="section-intro" data-i18n="maintenanceWorkflowIntro">An illustrative workflow. The actual design depends on the CMMS, field definitions, data quality, and review process.</p>
+        </div>
+        <div class="principle-grid">
+          <article class="principle-card reveal">
+            <span class="principle-number">01</span>
+            <h3 data-i18n="maintenanceStepOneTitle">CMMS exports</h3>
+            <p data-i18n="maintenanceStepOneText">Work Orders, asset hierarchy, and approved reference lists.</p>
+          </article>
+          <article class="principle-card reveal">
+            <span class="principle-number">02</span>
+            <h3 data-i18n="maintenanceStepTwoTitle">Validation</h3>
+            <p data-i18n="maintenanceStepTwoText">Check required fields, data types, duplicates, and missing values.</p>
+          </article>
+          <article class="principle-card reveal">
+            <span class="principle-number">03</span>
+            <h3 data-i18n="maintenanceStepThreeTitle">Taxonomy mapping</h3>
+            <p data-i18n="maintenanceStepThreeText">Map legacy values to approved asset and failure taxonomies; send unclear records for engineer review.</p>
+          </article>
+          <article class="principle-card reveal">
+            <span class="principle-number">04</span>
+            <h3 data-i18n="maintenanceStepFourTitle">Reliability reporting</h3>
+            <p data-i18n="maintenanceStepFourText">Prepare consistent inputs for MTBF, MTTR, backlog, and Pareto views.</p>
+          </article>
+        </div>
+        <p class="maintenance-note reveal" data-i18n="maintenanceNote">This is an illustrative workflow, not a published client case. Add metrics or outcomes only after they are measured and approved for publication.</p>
+      </section>
+
+      <section class="section contact-section container" aria-labelledby="maintenance-contact-title">
+        <div class="contact-copy reveal">
+          <p class="eyebrow" data-i18n="contactEyebrow">CONTACT</p>
+          <h2 id="maintenance-contact-title" data-i18n="maintenanceContactTitle">Working with Work Order or reliability data?</h2>
+          <p data-i18n="maintenanceContactText">Tell us what makes reporting difficult. We can start by understanding the data sources and definitions—without sharing sensitive operational data.</p>
+          <a class="button button-primary" href="../#contact" data-i18n="maintenanceContactCta">Discuss a use case</a>
+        </div>
+        <div class="contact-copy reveal">
+          <p class="eyebrow" data-i18n="useCasesEyebrow">USE CASES</p>
+          <h2 data-i18n="maintenanceBackTitle">Explore other business use cases</h2>
+          <a class="button button-secondary" href="../#use-cases" data-i18n="maintenanceBackCta">See more use cases</a>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-inner">
+        <a class="brand-lockup footer-brand-lockup" href="../#top" aria-label="MRK Labs">
+          <img class="brand-wordmark" src="../assets/logo-primary.svg?v=15" alt="" aria-hidden="true">
+        </a>
+        <span data-i18n="footerTagline">Build smarter. Automate better. Grow further.</span>
+        <span data-i18n="footerLocation">Balikpapan, Indonesia</span>
+      </div>
+    </footer>
+
+    <script src="../script.js?v=13"></script>
+  </body>
+</html>

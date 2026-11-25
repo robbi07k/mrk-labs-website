@@ -135,6 +135,42 @@
       useCaseGrowthProblem: "Perangkat yang ada tidak lagi sesuai dengan perkembangan cara kerja bisnis.",
       useCaseGrowthSolution: "Buat aplikasi khusus yang sesuai dengan kebutuhan operasional.",
       useCaseGrowthBenefit: "Sediakan alat yang dirancang berdasarkan kebutuhan nyata tim Anda.",
+      useCaseNumberSix: "06 / MAINTENANCE & RELIABILITY",
+      useCaseMaintenanceTitle: "Data Work Order yang belum konsisten",
+      useCaseMaintenanceProblem: "Asset ID, failure code, dan close-out notes berbeda-beda, sehingga history dan reliability analysis sulit dibandingkan.",
+      useCaseMaintenanceSolution: "Petakan Work Order ke taxonomy yang disepakati, validasi field penting, dan tandai record yang perlu ditinjau engineer.",
+      useCaseMaintenanceBenefit: "Data yang lebih konsisten sebagai dasar analisis MTBF, MTTR, backlog, dan Pareto.",
+      useCaseMaintenanceLink: "Lihat contoh workflow",
+      maintenanceEyebrow: "MAINTENANCE & RELIABILITY",
+      maintenanceTitle: "Dukung keputusan maintenance dengan data Work Order yang lebih konsisten.",
+      maintenanceIntro: "Untuk planner, reliability engineer, dan operations leader yang membutuhkan data Work Order lebih konsisten dan reporting yang lebih dapat diandalkan.",
+      maintenancePrimaryCta: "Diskusikan workflow reliability",
+      maintenanceSecondaryCta: "Lihat contoh workflow",
+      maintenanceCaseEyebrow: "CONTOH PENERAPAN",
+      maintenanceCaseTitle: "Saat data Work Order belum seragam",
+      maintenanceChallengeTitle: "Tantangan",
+      maintenanceChallengeText: "Asset ID, failure code, dan close-out notes berbeda-beda antar Work Order. Akibatnya, history sulit dibandingkan dan hasil reliability analysis kurang konsisten.",
+      maintenanceApproachTitle: "Pendekatan yang mungkin",
+      maintenanceApproachText: "Selaraskan field penting dengan taxonomy yang disepakati, validasi data wajib, dan tandai record ambigu untuk ditinjau engineer tanpa menghapus nilai aslinya.",
+      maintenanceOutcomeTitle: "Hasil yang diharapkan",
+      maintenanceOutcomeText: "Data yang lebih konsisten sebagai dasar analisis MTBF, MTTR, backlog, dan Pareto.",
+      maintenanceWorkflowEyebrow: "WORKFLOW SNAPSHOT",
+      maintenanceWorkflowTitle: "Dari data sumber ke reliability reporting",
+      maintenanceWorkflowIntro: "Ini contoh workflow. Desain akhirnya menyesuaikan CMMS, definisi field, kualitas data, dan proses review.",
+      maintenanceStepOneTitle: "CMMS exports",
+      maintenanceStepOneText: "Work Order, asset hierarchy, dan reference list yang disepakati.",
+      maintenanceStepTwoTitle: "Validation",
+      maintenanceStepTwoText: "Periksa field wajib, data type, duplikasi, dan nilai yang belum terisi.",
+      maintenanceStepThreeTitle: "Taxonomy mapping",
+      maintenanceStepThreeText: "Petakan nilai lama ke asset dan failure taxonomy yang disepakati; minta engineer meninjau record yang belum jelas.",
+      maintenanceStepFourTitle: "Reliability reporting",
+      maintenanceStepFourText: "Siapkan data yang konsisten untuk analisis MTBF, MTTR, backlog, dan Pareto.",
+      maintenanceNote: "Workflow ini bersifat ilustratif, bukan case study klien yang sudah dipublikasikan. Angka dan dampak hanya akan dicantumkan setelah diukur serta mendapat izin untuk dipublikasikan.",
+      maintenanceContactTitle: "Sedang merapikan data Work Order atau reliability?",
+      maintenanceContactText: "Ceritakan bagian reporting yang paling sulit. Kita bisa mulai dengan memahami data source dan definisinya, tanpa membagikan data operasional yang sensitif.",
+      maintenanceContactCta: "Diskusikan use case",
+      maintenanceBackTitle: "Jelajahi use case lainnya",
+      maintenanceBackCta: "Lihat use case lainnya",
       aboutEyebrow: "MENGAPA MRK LABS",
       aboutTitle: "Teknologi praktis. Manfaat nyata bagi bisnis.",
       aboutIntro: "Teknologi yang tepat berawal dari memahami hal yang perlu dipermudah.",
@@ -208,14 +244,18 @@
       link.href = "https://wa.me/6281348934399?text=" + encodeURIComponent(message);
     });
 
-    document.title = selected === "id"
+    var titleElement = document.querySelector("title");
+    var pageTitle = titleElement.getAttribute("data-title-" + selected);
+    document.title = pageTitle || (selected === "id"
       ? "MRK Labs — Studio AI & Otomasi Bisnis"
-      : "MRK Labs — AI & Business Automation Studio";
-    document.querySelector('meta[name="description"]').setAttribute(
+      : "MRK Labs — AI & Business Automation Studio");
+    var descriptionElement = document.querySelector('meta[name="description"]');
+    var pageDescription = descriptionElement.getAttribute("data-description-" + selected);
+    descriptionElement.setAttribute(
       "content",
-      selected === "id"
+      pageDescription || (selected === "id"
         ? "MRK Labs adalah studio AI dan otomasi bisnis yang membangun solusi AI praktis, alur kerja cerdas, dan sistem digital khusus."
-        : "MRK Labs is an AI and business automation studio building practical AI, intelligent workflows, and custom digital systems for businesses."
+        : "MRK Labs is an AI and business automation studio building practical AI, intelligent workflows, and custom digital systems for businesses.")
     );
     localStorage.setItem("mrk-labs-language", selected);
   }
@@ -223,6 +263,7 @@
   function setTheme(theme) {
     var selected = theme === "light" ? "light" : "dark";
     var isLight = selected === "light";
+    var assetPrefix = document.documentElement.getAttribute("data-asset-prefix") || "";
 
     document.documentElement.setAttribute("data-theme", selected);
     document.querySelectorAll(".theme-option").forEach(function (button) {
@@ -231,13 +272,13 @@
     document.querySelectorAll(".site-header .brand-wordmark").forEach(function (image) {
       image.setAttribute(
         "src",
-        isLight ? "assets/logo-transparent.svg?v=15" : "assets/logo-primary.svg?v=15"
+        assetPrefix + (isLight ? "assets/logo-transparent.svg?v=15" : "assets/logo-primary.svg?v=15")
       );
     });
     document.querySelectorAll(".footer-brand-lockup .brand-wordmark").forEach(function (image) {
       image.setAttribute(
         "src",
-        isLight ? "assets/logo-transparent.svg?v=15" : "assets/logo-primary.svg?v=15"
+        assetPrefix + (isLight ? "assets/logo-transparent.svg?v=15" : "assets/logo-primary.svg?v=15")
       );
     });
     document.querySelector('meta[name="theme-color"]').setAttribute(
